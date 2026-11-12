@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darpan Bhandari</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #f3eee3;
+        color: #111111;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      header,
+      section,
+      footer {
+        padding: 32px 0;
+        border-bottom: 1px solid #111111;
+      }
+      footer {
+        border-bottom: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+      }
+      nav ul,
+      section ul,
+      footer ul {
+        display: flex;
+        gap: 16px;
+        list-style: none;
+        flex-wrap: wrap;
+      }
+      a {
+        color: #111111;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a:hover {
+        color: #d9541e;
+      }
+      h1 {
+        font-size: 2.2rem;
+        margin: 8px 0;
+      }
+      h2 {
+        font-size: 1.4rem;
+        margin-bottom: 16px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      .accent {
+        color: #d9541e;
+        font-weight: 600;
+      }
+      section ul li {
+        border: 1px solid #111111;
+        padding: 6px 14px;
+        border-radius: 6px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      article {
+        border: 1px solid #111111;
+        padding: 16px;
+        border-radius: 8px;
+      }
+      button {
+        background: #d9541e;
+        color: #f3eee3;
+        border: 1px solid #111111;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      @media (max-width: 600px) {
+        nav,
+        footer {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#">Darpan Bhandari</a>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="accent">First-Year Industrial IT Student • LAB University of Applied Sciences</p>
+      <h1>Hi, I'm Darpan Bhandari.</h1>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm Darpan Bhandari, a first-year Industrial Information Technology student at LAB University of Applied Sciences in Finland. I’m originally from Butwal, Nepal.</p>
+        <p>I'm currently learning HTML, CSS, Javascript, Python and Git, and this website is where I share my projects as I grow. Before starting my IT studies, I studied hospitality and business, which gave me good teamwork and communication skills. My goal is to keep building my skills step by step and work in software or industrial IT in the future. Outside of coding, I enjoy music.</p>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>Git</li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid">
+          <article>
+            <p class="accent">To Be Added</p>
+            <h3>Project 1</h3>
+          </article>
+          <article>
+            <p class="accent">To Be Added</p>
+            <h3>Project 2</h3>
+          </article>
+          <article>
+            <p class="accent">To Be Added</p>
+            <h3>Project 3</h3>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <ul>
+        <li><a href="https://github.com/gojiradarpan" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/darpan-bhandari-2a6213313/" target="_blank">LinkedIn</a></li>
+        <li><a href="mailto:darpanbh25@gmail.com">Email</a></li>
+        <li><button id="copy-btn">Copy Email</button></li>
+      </ul>
+      <p>© Darpan Bhandari</p>
+    </footer>
+
+    <script>
+      const btn = document.getElementById("copy-btn");
+      btn.addEventListener("click", function () {
+        const box = document.createElement("textarea");
+        box.value = "darpanbh25@gmail.com";
+        document.body.appendChild(box);
+        box.select();
+        document.execCommand("copy");
+        document.body.removeChild(box);
+        btn.textContent = "Copied!";
+        setTimeout(() => (btn.textContent = "Copy Email"), 2000);
+      });
+    </script>
+  </body>
+</html>
